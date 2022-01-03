@@ -8,6 +8,7 @@ public class SpringWebApplication {
 	// Домашнее задание:
 	// 1. Реализовать заказы
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebApplication.class, args);
 	}
