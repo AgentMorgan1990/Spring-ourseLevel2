@@ -7,26 +7,34 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "order_items")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "product_id")
+    private Long productId;
+
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "total_price")
-    private int totalPrice;
+    @Column(name = "order_id")
+    private Long orderId;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "quantity")
+    private int quantity;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "price_per_product")
+    private int pricePerProduct;
+
+    @Column(name = "price")
+    private int price;
+
+
 }

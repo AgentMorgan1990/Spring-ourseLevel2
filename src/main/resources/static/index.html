@@ -104,7 +104,25 @@
     </table>
     <p>
         <button class="btn btn-secondary" ng-click="clearCart()">Очистить корзину</button>
-        <button class="btn btn-primary" ng-click="createOrder()">Оформить заказ</button>
+
+    <form novalidate ng-submit="createOrder()">
+        <div class="form-floating input-group-sm">
+            <input type="text" class="form-control" id="orderAddress" placeholder="" ng-model="order.address">
+            <label for="orderAddress">Адрес</label>
+        </div>
+        <p></p>
+        <div class="form-floating input-group-sm">
+            <input type="text" class="form-control" id="orderPhone" placeholder="" ng-model="order.phone">
+            <label for="orderPhone">Телефон</label>
+        </div>
+        <p></p>
+        <button class="btn btn-outline-warning btn-sm" style="width: 100%;" type="submit">Оформить заказ</button>
+    </form>
+
+
+<!--        <button class="btn btn-primary" ng-click="createOrder()">Оформить заказ</button>-->
+
+
     </p>
     <p>
         <button class="btn btn-danger" ng-click="showCurrentUserInfo()">Обо мне</button>
