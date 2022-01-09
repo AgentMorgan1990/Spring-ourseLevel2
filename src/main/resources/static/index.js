@@ -69,6 +69,21 @@ angular.module('app', ['ngStorage']).controller('indexController', function ($sc
         $http.defaults.headers.common.Authorization = '';
     };
 
+    $scope.createOrder = function () {
+        $http({
+            url: 'http://localhost:8189/app/api/v1/orders',
+            method: 'GET',
+            params: {
+                address: $scope.order ? $scope.order.address : null,
+                phone: $scope.order ? $scope.order.phone : null,
+                user_name: $scope.user ? $scope.user.username : null,
+            }
+        }).then(function (response){
+            $scope.clearCart();
+        });
+    }
+
+
     $rootScope.isUserLoggedIn = function () {
         if ($localStorage.springWebUser) {
             return true;
